@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luna/Products/Medicine</title>
+    <link rel="shortcut icon" href="favicon5.jpeg" type="image/x-icon">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cherish&family=Spectral:wght@200;300&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --main-bg-color: rgb(252, 240, 240);
+            /* background-color: rgb(252, 240, 240); */
+        }
+
+        .dropdown {
+            display: inline-block;
+            position: relative
+        }
+
+        .dropdown-content {
+            border-bottom: 2px solid black;
+            border-top: 2px solid black;
+            position: absolute;
+            background-color: white;
+            width: 140px;
+            /* min-width: 150px;   */
+            display: none;
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 16px 0;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: white;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown:hover .dropbtn {
+            color: #e28392;
+        }
+
+        nav {
+            /* background-color: #e28392; */
+            background-color: var(--main-bg-color);
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            height: 12vh;
+        }
+
+        span,
+        ul {
+            margin: auto 10px;
+        }
+        .luna{
+            width: 150px;
+            height: 55px;
+        }
+
+        ul {
+            display: flex;
+            flex-direction: row;
+            list-style: none;
+            justify-content: center;
+        }
+
+        ul li a {
+            text-decoration: none;
+            color: black;
+            margin: 0 2vw;
+            font-size: 22px;
+        }
+
+        ul li a:hover {
+            color: #e28392;
+        }
+
+        .homeA {
+            height: 65vh;
+        }
+
+        p {
+            z-index: 0;
+        }
+
+        .homeB::before {
+            content: "";
+            position: absolute;
+            background: url(https://www.bing.com/images/blob?bcid=SygXAVl-ZT8DHw) no-repeat center center/cover;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            bottom: 10vh;
+        }
+
+
+        .title {
+            font-family: 'Cherish', cursive;
+            font-size: 8vw;
+            margin: 2vh 7vh;
+        }
+
+        .para {
+            font-family: 'Spectral', serif;
+            width: 48vw;
+            margin: 0 20px;
+        }
+
+        img {
+            height: 29.5vh;
+        }
+
+        .item2>.img>img {
+            padding-top: 4vh;
+            height: 19vh;
+        }
+
+        .item4>.img>img {
+            padding-top: 4vh;
+            height: 22vh;
+        }
+
+        .img {
+            display: flex;
+            justify-content: center;
+            margin-left: 20px;
+            height: 30vh;
+            margin-top: 3vh;
+        }
+
+        .buttons {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            margin-top: 2.8vh;
+        }
+
+        .btn1 {
+            margin-right: 2vw;
+            width: 10vw;
+        }
+
+        .btn2 {
+            width: 7vw;
+        }
+
+        .btn1,
+        .btn2 {
+            padding: 5px 10px;
+            font-size: 2.4vh;
+            cursor: pointer;
+            font-family: 'Spectral', serif;
+            font-weight: bold;
+            border: 2px solid red;
+            border-radius: 8px;
+        }
+
+        .btn1:hover {
+            background-color: rgb(145, 166, 233);
+        }
+
+        .btn2:hover {
+            background-color: rgb(52, 165, 52);
+        }
+
+        .items {
+            display: flex;
+            background-color: var(--main-bg-color);
+            flex-direction: column;
+            /* align-items: center; */
+        }
+
+        .sec1 {
+            margin-top: 15vh;
+        }
+
+        .sec2 {
+            margin-top: 10vh;
+            margin-bottom: 10vh;
+        }
+
+        .sec1,
+        .sec2 {
+            background-color: var(--main-bg-color);
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            padding-right: 5vw;
+            padding-left: 5vw;
+        }
+
+        .item1,
+        .item2,
+        .item3,
+        .item4 {
+            background-color: white;
+            height: 65vh;
+            width: 43vw;
+            display: flex;
+            flex-direction: column;
+            /* align-items: center; */
+            border-radius: 10px;
+            /* box-shadow: 15px 15px 15px rgb(150, 148, 148); */
+            border: 2px solid black;
+            text-decoration: none;
+            color: black;
+        }
+
+        .item2,
+        .item4 {
+            margin-left: 4vw;
+        }
+
+        .text {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            font-family: 'Spectral', serif;
+            font-weight: bold;
+            margin-left: 5vw;
+            margin-right: 5vw;
+            margin-bottom: 2vh;
+        }
+
+        .name {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 10px;
+            font-size: 25px;
+        }
+
+        .price {
+            font-size: 3vh;
+            display: flex;
+            justify-content: center;
+        }
+
+
+        .footB {
+            background-color: #e28392;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+
+        .footB p a {
+            font-size: 3.5vh;
+            text-decoration: none;
+            color: black;
+            font-family: 'Spectral', serif;
+        }
+
+        .footB p a:hover {
+            color: white;
+        }
+
+        @media (max-width:675px) {
+            .homeA{
+                height: 75vh;
+            }
+            img {
+                height: 30vw;
+            }
+
+            .item2>.img>img {
+                padding-top: 4vh;
+                height: 19vw;
+            }
+
+            .item4>.img>img {
+                padding-top: 4vh;
+                height: 19vw;
+            }
+
+            .item1,
+            .item2,
+            .item3,
+            .item4 {
+                height: 85vh;
+            }
+
+            .buttons {
+                flex-direction: column;
+                justify-content: center;
+            }
+
+            .btn1 {
+                margin-right: 0;
+                margin-bottom: 5px;
+            }
+
+            .btn1,
+            .btn2 {
+                width: 13vw;
+            }
+
+            .sec1,
+            .sec2 {
+                flex-direction: column;
+            }
+
+            .item2,
+            .item4 {
+                margin-left: 0;
+                margin-top: 10vh;
+            }
+        }
+
+        @media (max-width:475px) {
+            .title{
+                font-size: 34px;
+            }
+            .para{
+                width: 260px;
+            }
+            img {
+                height: 142px;
+            }
+
+            .item2>.img>img {
+                padding-top: 4vh;
+                height: 90px;
+            }
+
+            .item4>.img>img {
+                padding-top: 4vh;
+                height: 90px;
+            }
+
+            .item1,
+            .item2,
+            .item3,
+            .item4 {
+                height: 548px;
+                width: 209px;
+            }
+
+            .buttons {
+                flex-direction: column;
+                justify-content: center;
+            }
+
+            .btn1 {
+                margin-right: 0;
+                margin-bottom: 5px;
+            }
+
+            .btn1,
+            .btn2 {
+                width: 61.7px;
+            }
+
+            .sec1,
+            .sec2 {
+                flex-direction: column;
+            }
+
+            .item2,
+            .item4 {
+                margin-left: 0;
+                margin-top: 10vh;
+            }
+        }
+
+        @media (max-width:394px) {
+            nav {
+                height: 14vh;
+                flex-direction: column;
+            }
+
+            .logo h2 {
+                display: flex;
+                justify-content: center;
+            }
+
+            ul {
+                flex-direction: row;
+                justify-content: center;
+            }
+
+            ul li a {
+                margin: 0 20px 0 8px;
+            }
+        }
+
+        @media (max-width:200px) {
+            nav {
+                height: 14vh;
+            }
+
+            ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            ul li {
+                display: flex;
+                justify-content: center;
+            }
+
+            ul li a {
+                font-size: 19px;
+            }
+
+            .dropdown {
+                margin-bottom: 5px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <span class="logo">
+                <!-- <h2>CODERED</h2> -->
+                <a href="index.html"><img src="Logo_final.png" alt="" class="luna"></a>
+            </span>
+            <!-- <ul>
+                <li>
+                    <div class="dropdown">
+                        <a href="#" class="dropbtn">Products</a>
+                        <div class="dropdown-content">
+                            <a href="index.html"> Medicine </a>
+                            <a href="pads.html"> Pads </a>
+                            <a href="wipes.html"> Feminine Wipes </a>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="index.html">Home</a></li>
+            </ul> -->
+        </nav>
+    </header>
+    <main>
+        <div class="homeA">
+            <div class="homeB">
+                <p class="title">Medicines</p>
+                <p class="para">Stay ahead of the pain. Pain medicine works better if you take it before the pain gets bad. Start taking the recommended dose of the pain medicine as soon as you start to feel cramping, or on the day before your period starts. Here, we have gotten together the best products from our own brand to help you with varying degrees of pain. 
+                    *Remember!! It is imperative you consult your doctor before consuming any of these products.”
+                    Where there is pain, don’t bear it, cause we got your back!</p>
+            </div>
+        </div>
+        <div class="items">
+            <div class="sec1">
+                <div class="item1">
+                    <div class="img"><img
+                            src="https://i-cf65ch.gskstatic.com/content/dam/cf-consumer-healthcare/panadol-reskin/en_AE/adult/Panadol_Woman_455x455.jpg?auto=format"
+                            alt=""></div>
+                    <div class="text">
+                        <p class="name">Panadol Tablets</p>
+                        <p class="price">&#8377; 140/-</p>
+                    </div>
+                    <div class="buttons">
+                        <button onclick="location.href='tablet1.html'" class="btn1">Check it out</button>
+                        <button onclick="payment(140)" class="btn2">Buy now</button>
+                    </div>
+                </div>
+                <div class="item2">
+                    <div class="img"><img src="https://m.media-amazon.com/images/I/81HzTvt+pJL._AC_SL1500_.jpg" alt="">
+                    </div>
+                    <div class="text">
+                        <p class="name">Feminax Tablets</p>
+                        <p class="price">&#8377; 220/-</p>
+                    </div>
+                    <div class="buttons">
+                        <button onclick="location.href='tablet2.html'" class="btn1">Check it out</button>
+                        <button onclick="payment(220)" class="btn2">Buy now</button>
+                    </div>
+                </div>
+            </div>
+            <div class="sec2">
+                <div class="item3">
+                    <div class="img"><img
+                            src="https://clicks.co.za/medias/?context=bWFzdGVyfHByb2R1Y3QtaW1hZ2VzfDUwNDY1fGltYWdlL2pwZWd8cHJvZHVjdC1pbWFnZXMvaGM2L2hkOC85OTI3NzQxNjY5NDA2LmpwZ3xmYmVlOThhODU5ZDcyN2ViYTZjNDcwMDQ0NWEzZTRhOTM3YmY2YTRkOWFjMTc0MjBjMDA4YWZiZjNmZTQ5ODJh"
+                            alt=""></div>
+                    <div class="text">
+                        <p class="name">Nurofen Tablets</p>
+                        <p class="price">&#8377; 49/-</p>
+                    </div>
+                    <div class="buttons">
+                        <button onclick="location.href='tablet3.html'" class="btn1">Check it out</button>
+                        <button onclick="payment(49)" class="btn2">Buy now</button>
+                    </div>
+                </div>
+                <div class="item4">
+                    <div class="img"><img src="https://m.media-amazon.com/images/I/517x9c1GsTL._AC_.jpg" alt=""></div>
+                    <div class="text">
+                        <p class="name">Advil 40 Tablets</p>
+                        <p class="price">&#8377; 435/-</p>
+                    </div>
+                    <div class="buttons">
+                        <button onclick="location.href='tablet4.html'" class="btn1">Check it out</button>
+                        <button onclick="payment(435)" class="btn2">Buy now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="footA">
+            <div class="footB">
+                <p class="faq"><a href="faq.html">FAQs</a></p>
+            </div>
+        </div>
+    </footer>
+</body>
+<script type="text/javascript">
+function payment(price) {
+const processor = "http://jinxpaymentgateway.000webhostapp.com/paytm/POST.php"
+
+var a, b, c, amount
+function mathRandomInt(a, b) {
+    if (a > b) {
+        var c = a;
+        a = b;
+        b = c;
+    }
+    return Math.floor(Math.random() * (b - a + 1) + a);
+}
+window.open((([processor, '?ORDER_ID=', mathRandomInt(50000000, 5000000000000), '&CUST_ID=', mathRandomInt(50000000, 5000000000000), '&TXN_AMOUNT=', price].join(''))), "_blank")
+}
+    (function(d, m){
+        var kommunicateSettings = 
+            {"appId":"24fff6000d26e9f465be91487ac86b922","popupWidget":true,"automaticChatOpenOnNavigation":true};
+        var s = document.createElement("script"); s.type = "text/javascript"; s.async = true;
+        s.src = "https://widget.kommunicate.io/v2/kommunicate.app";
+        var h = document.getElementsByTagName("head")[0]; h.appendChild(s);
+        window.kommunicate = m; m._globals = kommunicateSettings;
+    })(document, window.kommunicate || {});
+/* NOTE : Use web server to view HTML files as real-time update will not work if you directly open the HTML file in the browser. */
+</script>
+
+</html>

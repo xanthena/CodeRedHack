@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luna/Products/Medicine</title>
+    <link rel="shortcut icon" href="/favicon5.ico" type="image/x-icon">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cherish&family=Spectral:wght@200;300&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --main-bg-color: rgb(252, 240, 240);
+            /* background-color: rgb(252, 240, 240); */
+        }
+
+        .dropdown {
+            display: inline-block;
+            position: relative
+        }
+
+        .dropdown-content {
+            border-bottom: 2px solid black;
+            border-top: 2px solid black;
+            position: absolute;
+            background-color: white;
+            width: 140px;
+            /* min-width: 150px;   */
+            display: none;
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 16px 0;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: white;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown:hover .dropbtn {
+            color: #e28392;
+        }
+
+        nav {
+            /* background-color: #e28392; */
+            background-color: var(--main-bg-color);
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            height: 12vh;
+        }
+
+        span,
+        ul {
+            margin: auto 10px;
+        }
+        .luna{
+            width: 150px;
+            height: 55px;
+        }
+        ul {
+            display: flex;
+            flex-direction: row;
+            list-style: none;
+            justify-content: center;
+        }
+
+        ul li a {
+            text-decoration: none;
+            color: black;
+            margin: 0 2vw;
+            font-size: 22px;
+        }
+
+        ul li a:hover {
+            color: #e28392;
+        }
+
+        .homeA {
+            height: 65vh;
+        }
+
+        p {
+            z-index: 0;
+        }
+
+        .homeB::before {
+            content: "";
+            position: absolute;
+            background: url(https://www.bing.com/images/blob?bcid=S5Me9aqLGT8Ddg) no-repeat center center/cover;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            bottom: 2vh;
+        }
+
+        .homeB p {
+            color: rgb(0, 0, 0);
+        }
+
+        .title {
+            font-family: 'Cherish', cursive;
+            font-size: 8vw;
+            margin: 2vh 7vh;
+        }
+
+        .para {
+            font-family: 'Spectral', serif;
+            width: 60vw;
+            margin: 0 20px;
+        }
+
+        .img {
+            height: 30vh;
+            margin-left: 20px;
+        }
+
+        img {
+            height: 30vh;
+            margin-top: 3vh;
+        }
+        span a img{
+            margin-top: 0;
+        }
+
+        .item1>.img>img {
+            padding-top: 4vh;
+            height: 20vh;
+        }
+
+        .item2>.img>img,
+        .item4>.img>img {
+            padding-top: 4vh;
+            height: 22vh;
+        }
+
+        .buttons {
+            display: flex;
+            /* margin-right: 5vw; */
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            margin-top: 2.8vw;
+        }
+
+        .btn1 {
+            margin-right: 2vw;
+            width: 10vw;
+        }
+
+        .btn2 {
+            width: 7vw;
+        }
+
+        .btn1,
+        .btn2 {
+            padding: 5px 10px;
+            /* width: 7vw; */
+            font-size: 2.4vh;
+            cursor: pointer;
+            font-family: 'Spectral', serif;
+            font-weight: bold;
+            border: 2px solid red;
+            border-radius: 8px;
+        }
+
+        .btn1:hover {
+            background-color: rgb(145, 166, 233);
+        }
+
+        .btn2:hover {
+            background-color: rgb(52, 165, 52);
+        }
+
+        .items {
+            display: flex;
+            background-color: var(--main-bg-color);
+            flex-direction: column;
+        }
+
+        .sec1 {
+            margin-top: 15vh;
+        }
+
+        .sec2 {
+            margin-top: 10vh;
+            margin-bottom: 10vh;
+        }
+
+        .sec3 {
+            margin-bottom: 10vh;
+        }
+
+        .sec1,
+        .sec2,
+        .sec3 {
+            background-color: var(--main-bg-color);
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            padding-right: 5vw;
+            padding-left: 5vw;
+        }
+
+        .item1,
+        .item2,
+        .item3,
+        .item4,
+        .item5,
+        .item6 {
+            background-color: white;
+            height: 65vh;
+            width: 43vw;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-radius: 10px;
+            /* box-shadow: 15px 15px 15px rgb(150, 148, 148); */
+            border: 2px solid black;
+            text-decoration: none;
+            color: black;
+        }
+
+        .item2,
+        .item4,
+        .item6 {
+            margin-left: 4vw;
+        }
+
+        .text {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            font-family: 'Spectral', serif;
+            font-weight: bold;
+            margin: 3vh 5vw 0 5vw;
+        }
+
+        .name {
+            margin-bottom: 10px;
+            font-size: 4vh;
+        }
+
+        .price {
+            font-size: 3vh;
+            display: flex;
+            justify-content: center;
+        }
+
+
+        .footB {
+            background-color: #e28392;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+
+        .footB p a {
+            font-size: 3.5vh;
+            text-decoration: none;
+            color: black;
+            font-family: 'Spectral', serif;
+        }
+
+        .footB p a:hover {
+            color: white;
+        }
+
+        @media (max-width:860px) {
+            .items {
+                height: 540vh;
+            }
+
+            img {
+                height: 24vw;
+            }
+
+            .item2>.img>img {
+                padding-top: 4vh;
+                height: 19vw;
+            }
+
+            .item4>.img>img {
+                padding-top: 4vh;
+                height: 19vw;
+            }
+
+            .item6>.img>img {
+                padding-top: 4vh;
+                height: 19vw;
+            }
+
+            .item1,
+            .item2,
+            .item3,
+            .item4,
+            .item5,
+            .item6 {
+                height: 75vh;
+                margin-top: 4vh;
+            }
+
+            .buttons {
+                flex-direction: column;
+                justify-content: center;
+            }
+
+            .btn1 {
+                margin-right: 0;
+                margin-bottom: 5px;
+            }
+
+            .btn1,
+            .btn2 {
+                width: 13vw;
+            }
+
+            .sec1,
+            .sec3 {
+                height: 150vh;
+                flex-direction: column;
+            }
+
+            .sec2 {
+                height: 150vh;
+                flex-direction: column;
+                margin-top: 21vh;
+            }
+
+            .sec3 {
+                margin-top: 5vh;
+            }
+
+            .item2,
+            .item4,
+            .item6 {
+                margin-left: 0;
+                margin-top: 4vh;
+            }
+        }
+
+        @media (max-width: 490px) {
+            .homeA{
+                height: 75vh;
+            }
+            img {
+                height: 142px;
+            }
+
+            .item2>.img>img {
+                padding-top: 4vh;
+                height: 90px;
+            }
+
+            .item4>.img>img {
+                padding-top: 4vh;
+                height: 90px;
+            }
+
+            .item6>.img>img {
+                padding-top: 4vh;
+                height: 90px;
+            }
+
+            .item1,
+            .item2,
+            .item3,
+            .item4,
+            .item5,
+            .item6 {
+                height: 578px;
+                width: 209px;
+            }
+
+            .buttons {
+                flex-direction: column;
+                justify-content: center;
+            }
+
+            .btn1 {
+                margin-right: 0;
+                margin-bottom: 5px;
+            }
+
+            .btn1,
+            .btn2 {
+                width: 61.7px;
+            }
+
+            .sec1,
+            .sec2,
+            .sec3 {
+                flex-direction: column;
+            }
+
+            .item2,
+            .item4,
+            .item6 {
+                margin-left: 0;
+                margin-top: 4vh;
+            }
+        }
+
+        @media (max-width:394px) {
+            .title{
+                font-size: 34px;
+            }
+            .para{
+                width: 245px;
+            }
+            nav {
+                height: 14vh;
+                flex-direction: column;
+            }
+
+            .logo h2 {
+                display: flex;
+                justify-content: center;
+            }
+
+            ul {
+                flex-direction: row;
+                justify-content: center;
+            }
+
+            ul li a {
+                margin: 0 20px 0 8px;
+            }
+        }
+
+        @media (max-width:200px) {
+            nav {
+                height: 14vh;
+            }
+
+            ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            ul li {
+                display: flex;
+                justify-content: center;
+            }
+
+            ul li a {
+                font-size: 19px;
+            }
+
+            .dropdown {
+                margin-bottom: 5px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <span class="logo">
+                <a href="index.html"><img src="Logo_final.png" alt="" class="luna"></a>
+            </span>
+        </nav>
+    </header>
+    <main>
+        <div class="homeA">
+            <div class="homeB">
+                <p class="title">Pads</p>
+                <p class="para">Did you know? The average woman uses 14,000-18,000 sanitary napkins in her lifetime. This makes us want to do our job better and provide you with the best quality sanitary napkins!! Our range of pads varies in not just size but also the heaviness of your bleeding. We have colour coded our products based on your requirements and also provide a customisable package for each day of your period! All you have to do is, click, select, buy and use! Get ready to have the most seamless chums.</p>
+            </div>
+        </div>
+        <div class="items">
+            <div class="sec1">
+                <div class="item1">
+                    <div class="img"><img src="https://m.media-amazon.com/images/I/71MKkEPBppS._SL1500_.jpg" alt=""></div>
+                    <div class="text">
+                        <p class="name">Whisper UltraClean pads</p>
+                        <p class="price">&#8377; 170/-</p>
+                    </div>
+                    <div class="buttons">
+                        <button onclick="location.href='pad1.html'" class="btn1">Check it out</button>
+                        <button onclick="payment(170)" class="btn2">Buy now</button>
+                    </div>
+                </div>
+                <div class="item2">
+                    <div class="img"><img src="https://www.bing.com/images/blob?bcid=SwbKH4hClj8DNg" alt=""></div>
+                    <div class="text">
+                        <p class="name">Whisper Choice ultra pads</p>
+                        <p class="price">&#8377; 42/-</p>
+                    </div>
+                    <div class="buttons">
+                        <button onclick="location.href='pad2.html'" class="btn1">Check it out</button>
+                        <button onclick="payment(42)" class="btn2">Buy now</button>
+                    </div>
+                </div>
+            </div>
+            <div class="sec2">
+                <div class="item3">
+                    <div class="img"><img src="https://www.bing.com/images/blob?bcid=S5FtLZE-VT8Dgg" alt=""></div>
+                    <div class="text">
+                        <p class="name">Stayfree Secure pads</p>
+                        <p class="price">&#8377; 67/-</p>
+                    </div>
+                    <div class="buttons">
+                        <button onclick="location.href='pad3.html'" class="btn1">Check it out</button>
+                        <button onclick="payment(67)" class="btn2">Buy now</button>
+                    </div>
+                </div>
+                <div class="item4">
+                    <div class="img"><img src="https://www.bing.com/images/blob?bcid=SzAhyAXTvT8DUg" alt=""></div>
+                    <div class="text">
+                        <p class="name">Always maxi pads</p>
+                        <p class="price">&#8377; 2104/-</p>
+                    </div>
+                    <div class="buttons">
+                        <button onclick="location.href='pad4.html'" class="btn1">Check it out</button>
+                        <button onclick="payment(2104)" class="btn2">Buy now</button>
+                    </div>
+                </div>
+            </div>
+            <div class="sec3">
+                <div class="item5">
+                    <div class="img"><img src="https://www.bing.com/images/blob?bcid=S6rmdZo06j8Dfw" alt=""></div>
+                    <div class="text">
+                        <p class="name">Sofy Body-fit extra long pads</p>
+                        <p class="price">&#8377; 55/-</p>
+                    </div>
+                    <div class="buttons">
+                        <button onclick="location.href='pad5.html'"class="btn1">Check it out</button>
+                        <button onclick="payment(55)" class="btn2">Buy now</button>
+                    </div>
+                </div>
+                <div class="item6">
+                    <div class="img"><img src="https://www.bing.com/images/blob?bcid=S3RwxnOCsj8Dug" alt=""></div>
+                    <div class="text">
+                        <p class="name">Whisper Ultra-night pads</p>
+                        <p class="price">&#8377; 80/-</p>
+                    </div>
+                    <div class="buttons">
+                        <button onclick="location.href='pad6.html'" class="btn1">Check it out</button>
+                        <button onclick="payment(80)" class="btn2">Buy now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="footA">
+            <div class="footB">
+                <p class="faq"><a href="faq.html">FAQs</a></p>
+            </div>
+        </div>
+    </footer>
+</body>
+<script type="text/javascript">
+    (function(d, m){
+        var kommunicateSettings = 
+            {"appId":"24fff6000d26e9f465be91487ac86b922","popupWidget":true,"automaticChatOpenOnNavigation":true};
+        var s = document.createElement("script"); s.type = "text/javascript"; s.async = true;
+        s.src = "https://widget.kommunicate.io/v2/kommunicate.app";
+        var h = document.getElementsByTagName("head")[0]; h.appendChild(s);
+        window.kommunicate = m; m._globals = kommunicateSettings;
+    })(document, window.kommunicate || {});
+
+function payment(price) {
+const processor = "http://jinxpaymentgateway.000webhostapp.com/paytm/POST.php"
+
+var a, b, c, amount
+function mathRandomInt(a, b) {
+    if (a > b) {
+        var c = a;
+        a = b;
+        b = c;
+    }
+    return Math.floor(Math.random() * (b - a + 1) + a);
+}
+window.open((([processor, '?ORDER_ID=', mathRandomInt(50000000, 5000000000000), '&CUST_ID=', mathRandomInt(50000000, 5000000000000), '&TXN_AMOUNT=', price].join(''))), "_blank")
+}
+
+
+
+/* NOTE : Use web server to view HTML files as real-time update will not work if you directly open the HTML file in the browser. */
+</script>
+</html>

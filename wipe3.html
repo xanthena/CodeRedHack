@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Everteen intimate hygeine wipes</title>
+    <link rel="shortcut icon" href="favicon5.jpeg" type="image/x-icon">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cherish&family=Spectral:wght@200;300&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;1,300&family=Roboto+Slab:wght@300&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --main-bg-color: rgb(252, 240, 240);
+            /* background-color: rgb(252, 240, 240); */
+        }
+
+        nav {
+            /* background-color: #e28392; */
+            background-color: var(--main-bg-color);
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            height: 12vh;
+            /* border-bottom: 2px solid black; */
+        }
+
+        span,
+        ul {
+            margin: auto 10px;
+        }
+        .luna{
+            width: 150px;
+            height: 55px;
+        }
+
+        ul {
+            display: flex;
+            flex-direction: row;
+            list-style: none;
+            justify-content: center;
+        }
+
+        ul li a {
+            text-decoration: none;
+            color: black;
+            margin: 0 2vw;
+            font-size: 22px;
+        }
+
+        ul li a:hover {
+            color: #e28392;
+        }
+
+        .item{
+            height: 70vh;
+            /* width: 1020px; */
+            width: 81.7vw;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            padding: 50px 80px;
+            margin-top: 38px;
+            margin-bottom: 38px;
+            margin-left: 38px;
+            border-radius: 12px;
+            box-shadow: 0 0 6px 6px rgb(179, 172, 172);
+            /* border: 2px solid black */
+        }
+        .pic{
+            height: 360px;
+            width: 315px;
+        }
+        .pic img{
+            height: 275px;
+        }
+        .details{
+            /* margin-left: 4vw; */
+            width: 640px;
+            display: flex;
+            flex-direction: column;
+        }
+        .name{
+            height: 54px;
+            font-size: 32px;
+            font-weight: bolder;
+            font-family: 'Spectral', serif;
+        }
+        .prcbtn{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            height: 34px;
+        }
+        .price{
+            font-size: 22px;
+            font-family: 'Spectral', serif;
+        }
+        .btn{
+            margin-left: 166px;
+            width: 100px;
+            padding: 3px 10px;
+            /* width: 7vw; */
+            font-size: 14px;
+            cursor: pointer;
+            font-family: 'Spectral', serif;
+            font-weight: bold;
+            border: 2px solid red;
+            border-radius: 8px;
+        }
+        .btn:hover {
+            background-color: rgb(145, 166, 233);
+        }
+        .content{
+            margin-top: 20px;
+            height: 242px;
+            font-family: 'Spectral', serif;
+        }
+        .content ul{
+            display: flex;
+            flex-direction: column;
+            list-style: disc;
+            /* font-family: 'Merriweather', serif; */
+            font-family: 'Roboto Slab', serif;
+        }
+        .content p{
+            font-size: large;
+            font-weight: bolder;
+            margin-bottom: 10px;
+        }
+        .content ul li{
+            margin: 7px 0;
+            font-weight: bold;
+            font-size: 13.5px;
+        }
+        @media (min-width: 1200px){
+            .item{
+                margin-right: 38px;
+            }
+        }
+        @media (max-width:950px){
+            .item{
+                height: 650px;
+                margin-bottom: 15px;
+            }
+            .name{
+                height: 90px;
+            }
+            .prcbtn{
+                height: 85px;
+            }
+            .btn{
+                margin-left: 75px;
+            }
+        }
+        @media (max-width:750px){
+            .item{
+                height: 800px;
+                margin-bottom: 15px;
+            }
+        }
+        @media (max-width:665px){
+            .name{
+                height: 140px;
+            }
+            .item{
+                height: 1300px;
+                margin-bottom: 15px;
+            }
+            .btn{
+                margin-left: 20px;
+            }
+        }
+        @media (max-width:394px) {
+            nav {
+                height: 14vh;
+                flex-direction: column;
+            }
+
+            .logo h2 {
+                display: flex;
+                justify-content: center;
+            }
+
+            ul {
+                flex-direction: row;
+                justify-content: center;
+            }
+
+            ul li a {
+                margin: 0 20px 0 8px;
+            }
+        }
+
+        @media (max-width:200px) {
+            nav {
+                height: 14vh;
+            }
+
+            ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            ul li {
+                display: flex;
+                justify-content: center;
+            }
+
+            ul li a {
+                font-size: 19px;
+            }
+
+            .dropdown {
+                margin-bottom: 5px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <span class="logo">
+                <a href="index.html"><img src="Logo_final.png" alt="" class="luna"></a>
+            </span>
+        </nav>
+    </header>
+    <div class="item">
+        <div class="pic">
+            <img src="https://richesm.com/wp-content/uploads/2021/07/Everteen-Feminine-Intimate-Hygiene-Wipes-for-Women-2-Packs-15-Individually-Wrapped-Wipes-Each-2-600x600.jpg" alt="">
+        </div>
+        <div class="details">
+            <p class="name">Everteen intimate hygeine wipes</p>
+            <div class="prcbtn">
+                <p class="price">&#8377; 110/-</p>
+                <button onclick="payment(110)" class="btn">Buy now</button>
+            </div>
+            <div class="content">
+                <p>Features:</p>
+                <ul>
+                    <li>India's first individually-wrapped feminine hygiene wipes. Each pack contains 15 individually-wrapped ultra-soft wipes for your convenience on-the-move. Made of 100% natural & biodegradable cloth, clinically and dermatologically tested</li>
+                    <li>Free from alcohol, SLS and Parabens, everteen wipes provide you relief from intimate discomfort while helping you feel fresh & clean with mild-cleansing properties</li>
+                    <li>everteen helps you maintain intimate hygiene all the time ON-THE-MOVE</li>
+                    <li>Perfect to use anytime: Before & after intimate activity After urination During periods Anytime you just want to feel fresh & clean. DIRECTIONS FOR USE: Tear open sachet. Open & unfold wipe. Thoroughly wipe external private area from front to back. After cleansing, simply dispose off.</li> 
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+  function payment(price) {
+const processor = "http://jinxpaymentgateway.000webhostapp.com/paytm/POST.php"
+
+var a, b, c, amount
+function mathRandomInt(a, b) {
+    if (a > b) {
+        var c = a;
+        a = b;
+        b = c;
+    }
+    return Math.floor(Math.random() * (b - a + 1) + a);
+}
+window.open((([processor, '?ORDER_ID=', mathRandomInt(50000000, 5000000000000), '&CUST_ID=', mathRandomInt(50000000, 5000000000000), '&TXN_AMOUNT=', price].join(''))), "_blank")
+}
+</script>
+</html>
